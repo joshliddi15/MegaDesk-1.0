@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MegaDesk_1._0
+﻿namespace MegaDesk_1._0
 {
-    internal class DeskQuote
+    internal class DeskQuote: Desk
     {
+        public int QuoteID;
+        public string CustomerName = "";
+        public double QuotePrice;
     }
 }
