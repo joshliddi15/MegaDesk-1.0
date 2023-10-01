@@ -4,10 +4,13 @@ namespace MegaDesk_1._0
 {
     public partial class AddQuote : Form
     {
+        Desk newDesk = new Desk();
+        DeskQuote newDeskQuote = new DeskQuote();
+
         public AddQuote()
         {
             InitializeComponent();
-            DeskQuote newDeskQuote = new DeskQuote();
+            
             dateLabel.Text = "Quote Date: " + DateTime.Now.ToString("dd MMM yyyy");
             matlBox.DataSource = Enum.GetValues(typeof(desktopMatl));
             matlBox.DisplayMember = "ToString";
@@ -15,20 +18,20 @@ namespace MegaDesk_1._0
 
 
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SubmitQuote_Click(object sender, EventArgs e)
         {
             Form DisplayQuote = new DisplayQuote();
             this.Hide();
-            DisplayQuote.FormClosed += Button2_Click;
+            DisplayQuote.FormClosed += Cancel_Click;
             DisplayQuote.Show();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void deskWidth_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -47,7 +50,7 @@ namespace MegaDesk_1._0
                 int minValue = 24;
                 int maxValue = 96;
 
-                if (parsedValue >= minValue && parsedValue <= maxValue)
+                if (parsedValue >= newDesk.deskWidthMin && parsedValue <= newDesk.deskWidthMax)
                 {
                     textBox1.ForeColor = Color.Black; // Set the text color to show  valid input
                     label7.Visible = false;
@@ -64,7 +67,7 @@ namespace MegaDesk_1._0
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void deskDepth_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -80,10 +83,8 @@ namespace MegaDesk_1._0
                 int parsedValue = int.Parse(textBox2.Text); // Attempt to parse the entered text as an integer
 
                 // Replace these values with your desired range
-                int minValue = 24;
-                int maxValue = 96;
 
-              if (parsedValue >= minValue && parsedValue <= maxValue)
+                if (parsedValue >= newDesk.deskDepthMin && parsedValue <= newDesk.deskDepthMax)
                 {
                     textBox2.ForeColor = Color.Black; // Set the text color to show  valid input
                     label8.Visible = false;
@@ -98,6 +99,12 @@ namespace MegaDesk_1._0
                 textBox2.ForeColor = Color.Red; // Set the text color red to show invalid input
                 label8.Visible = true;
             }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

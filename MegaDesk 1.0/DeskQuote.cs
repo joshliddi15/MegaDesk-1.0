@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk_1._0
 {
-    internal class DeskQuote: Desk
+    internal class DeskQuote : Desk
     {
         public int QuoteID;
         public string CustomerName = "";

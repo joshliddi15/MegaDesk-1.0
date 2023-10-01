@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label8 = new Label();
-            label7 = new Label();
             button2 = new Button();
             button1 = new Button();
             label6 = new Label();
@@ -48,28 +46,6 @@
             label9 = new Label();
             SuspendLayout();
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.Red;
-            label8.Location = new Point(529, 532);
-            label8.Name = "label8";
-            label8.Size = new Size(634, 41);
-            label8.TabIndex = 34;
-            label8.Text = "Desk width must be between 12 and 48 inches";
-            label8.Visible = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.Red;
-            label7.Location = new Point(529, 415);
-            label7.Name = "label7";
-            label7.Size = new Size(634, 41);
-            label7.TabIndex = 33;
-            label7.Text = "Desk width must be between 24 and 96 inches";
-            label7.Visible = false;
-            // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
@@ -77,8 +53,9 @@
             button2.Name = "button2";
             button2.Size = new Size(453, 185);
             button2.TabIndex = 32;
-            button2.Text = "Return Home";
+            button2.Text = "Edit Quote";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -87,7 +64,7 @@
             button1.Name = "button1";
             button1.Size = new Size(507, 185);
             button1.TabIndex = 31;
-            button1.Text = "Submit Quote";
+            button1.Text = "Approve Quote";
             button1.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -188,7 +165,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(529, 346);
+            textBox1.Location = new Point(519, 347);
             textBox1.Margin = new Padding(7, 8, 7, 8);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
@@ -255,8 +232,6 @@
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1486, 1384);
-            Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label6);
@@ -281,9 +256,6 @@
         }
 
         #endregion
-
-        private Label label8;
-        private Label label7;
         private Button button2;
         private Button button1;
         private Label label6;

@@ -71,5 +71,10 @@ namespace MegaDesk_1._0
             }
             return quotes;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

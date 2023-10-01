@@ -11,16 +11,15 @@ namespace MegaDesk_1._0
         {
             Form displayQuote = new DisplayQuote();
             this.Hide();
-            //displayQuote.OnReturn += ShowMainForm;
+            displayQuote.FormClosed += ShowMainForm;
             displayQuote.Show();
-
         }
 
         private void viewAllQuotesBtnClick(object sender, EventArgs e)
         {
             Form viewAllQuotes = new ViewAllQuotes();
             this.Hide();
-            //viewAllQuotes.OnReturn += ShowMainForm;
+            viewAllQuotes.FormClosed += ShowMainForm;
             viewAllQuotes.Show();
         }
 
@@ -33,7 +32,7 @@ namespace MegaDesk_1._0
         {
             Form searchQuote = new SearchQuotes();
             this.Hide();
-            //searchQuote.OnReturn += ShowMainForm;
+            searchQuote.FormClosed += ShowMainForm;
             searchQuote.Show();
         }
 

@@ -6,6 +6,10 @@
         public double deskDepth;
         public int deskDrawerCnt;
         public desktopMatl deskMatl;
+        public int deskWidthMax = 96;
+        public int deskDepthMax = 48;
+        public int deskWidthMin = 24;
+        public int deskDepthMin = 12;
     }
 
     public enum desktopMatl
