@@ -251,6 +251,7 @@
             Margin = new Padding(7, 8, 7, 8);
             Name = "DisplayQuote";
             Text = "Form2";
+            Load += DisplayQuote_Load;
             ResumeLayout(false);
             PerformLayout();
         }

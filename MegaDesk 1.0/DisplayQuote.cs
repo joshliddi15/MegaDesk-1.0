@@ -12,5 +12,10 @@
         {
             //Need to figure out how to get back to last form to edit quote.
         }
+
+        private void DisplayQuote_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
